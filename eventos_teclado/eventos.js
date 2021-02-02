@@ -7,8 +7,8 @@ var teclas = {
 
 var cuadro = document.getElementById("area_de_dibujo");
 var papel = cuadro.getContext("2d");
-var x = 0;
-var y = 0;
+var x = 150;
+var y = 150;
 
 dibujandoLinea("red", x - 1 , y - 1, x + 1, y + 1, papel);
 
@@ -27,7 +27,7 @@ document.addEventListener("keydown", dibujarTeclado);
 
 function dibujarTeclado(evento){
   var colorcito = "red";
-  var movimiento = 5;
+  var movimiento = 10;
   switch (evento.keyCode) {
     case teclas.UP:
     dibujandoLinea(colorcito, x, y, x, y - movimiento, papel);
