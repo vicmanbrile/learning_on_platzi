@@ -22,7 +22,7 @@ function dibujandoLinea(color, xinicial, yincial, xfinal, yfinal, lienzo){
     lienzo.closePath();
 }
 
-document.addEventListener("keydown", dibujarTeclado);
+document.addEventListener("keyup", dibujarTeclado);
 
 
 function dibujarTeclado(evento){
