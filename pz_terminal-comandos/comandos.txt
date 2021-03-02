@@ -48,5 +48,34 @@ $cat "ver archivo plano"
 		[-ruta/archivo-]
 	}
 
+$head "Mostrara las primeras 10 lineas por defecto"
+	-[n] [-numero(numero de lineas que deseamos ver)-]
+
+$tail "Mostrara las ultimas 10 lineas por defecto"
+	-[n] [-numero(numero de lineas que deseamos ver)-]
+
+
+--EDITORES DE TEXTO--
+
 $code "abrir archivo en VSCode"
 	[ruta/archivo]
+
+$vim "Editor"
+	[archivo]
+
+$nano "Editor"
+	[archivo]
+
+----
+
+#grep "Filtrar lineas que queremos visualizar"
+	[-bisqueda-] [-archivo-] "busqueda exacta"
+	-[i] "[-busqueda-]" [-archivo-] "busqueda relativa"
+	[-bisqueda-] [$]  [-archivo-] "si incluye la palabra al final"
+	[^]{[-bisqueda-] [-archivo-] "si incluye la palabra al inicio"
+
+
+$set "Sirve para realisar sustituciones"
+	[s/] [-termino/antiguo-] [ / ] [-termino/nuevo-] [** ; **] [-archivo-]
+	
+	**Si se quiere hacer cambios de mas terminos se separa por [ ; ]**
