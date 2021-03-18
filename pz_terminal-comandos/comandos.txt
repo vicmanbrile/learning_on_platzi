@@ -1,0 +1,81 @@
+$date "Te muestra la hora"
+$history "ver comandos utlizados"
+$! "ejecutar un comando hecho antes"
+	[numero-history]  
+$echo "imprimir en la terminal"
+	"[mensaje]"
+$man "consulta en manual el comando"
+	[comando]
+
+$pwd "Muestra el directorio en el que estas"
+
+$ls "Mostrar los archivos del directorio"
+
+	-[l]{Listar los archios en cascada}
+
+	-[a]{Mostrar los archivos ocultos}
+	-[h]{Mostrar con las unidades de tamaño KB,MB}
+	-[R]{Mostar todo el contenido de los directorios de forma recursiva}
+
+	-[x]{Ordena los archivos primero por el nombre y luego la extencion}
+	-[X]{Ordena los archivos primero por la extencion y luego el nombre}
+	-[t]{Ordena los archivos por fecha de modificacion}
+	-[S]{Ordena los archivos por tamaño}
+
+$touch "crear un archivo"
+	[-ruta/nombre del achivo-].[-extencion-]
+
+$cd "moverte entre directorios"
+	[-ruta-]
+
+$cp "copiar un archivo"
+	[-ruta/achivo(a copiar)-][-directorio(a mover)-]
+
+$rm "eliminar un archivo"
+	[-ruta/archivo-]
+
+$mrdir "eliminar un directorio"
+	[-ruta-]
+
+$mv "Mover un archivo"
+	[-ruta/archivo-] [-ruta(a mover)-]
+
+$cat "ver archivo plano"
+	[-ruta/archivo-]
+
+{	$nano "editar archivo plano en la terminal"
+	$vim 
+		[-ruta/archivo-]
+	}
+
+$head "Mostrara las primeras 10 lineas por defecto"
+	-[n] [-numero(numero de lineas que deseamos ver)-]
+
+$tail "Mostrara las ultimas 10 lineas por defecto"
+	-[n] [-numero(numero de lineas que deseamos ver)-]
+
+
+--EDITORES DE TEXTO--
+
+$code "abrir archivo en VSCode"
+	[ruta/archivo]
+
+$vim "Editor"
+	[archivo]
+
+$nano "Editor"
+	[archivo]
+
+----
+
+#grep "Filtrar lineas que queremos visualizar"
+	[-bisqueda-] [-archivo-] "busqueda exacta"
+	-[i] "[-busqueda-]" [-archivo-] "busqueda relativa"
+	[-bisqueda-] [$]  [-archivo-] "si incluye la palabra al final"
+	[^]{[-bisqueda-] [-archivo-] "si incluye la palabra al inicio"
+
+
+$set "Sirve para realisar sustituciones"
+	[s/] [-termino/antiguo-] [ / ] [-termino/nuevo-] [** ; **] [-archivo-]
+	
+	**Si se quiere hacer cambios de mas terminos se separa por [ ; ]**
