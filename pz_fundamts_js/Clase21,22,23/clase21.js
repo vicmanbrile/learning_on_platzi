@@ -1,18 +1,21 @@
 function Personas(nombre, apellido, alturaMts) {
-    this.nombre = nombre;
-    this.apellido = apellido;
+	this.nombre = nombre;
+	this.apellido = apellido;
 	this.altura = alturaMts
 }
 
+const ALTURA_ALTA = altura => altura > 1.8;
+
+//Estos dos prototipos deben estar el function anonima
+//Si se utiliza las Arrow Functions  se pierde el concexto de this y apuntamos a window
 Personas.prototype.saludar = function (){
-    console.log(`Hola me llamo ${this.nombre} ${this.apellido}`)
+	console.log(`Hola me llamo ${this.nombre} ${this.apellido}`)
 	console.log(`Soy una persona ${this.miAltura()}`)
 }
 
-const ALTURA_ALTA = 1.8;
 
 Personas.prototype.miAltura = function () {
-	if (this.altura > ALTURA_ALTA){
+	if (ALTURA_ALTA(this.altura)){
 		return "Alta"
 	} else {
 		return "Baja"
