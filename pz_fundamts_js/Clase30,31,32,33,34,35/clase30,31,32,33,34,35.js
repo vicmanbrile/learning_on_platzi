@@ -17,15 +17,16 @@ function obtenerPersonaje(id) {
 
 const onError = id => console.log(`Error al concegir personaje  ${id}`)
 
+async function obtenerPersonajes(){
+    var ids = [1,2,3,4,5,6,7]
+    var promesas = ids.map( id => obtenerPersonaje(id))
+    try {
+        var personajes = await Promise.all(promesas);
+        console.table(personajes)
+    } catch (id){
+        onError(id)
+    }
+}
 
 
-var ids = [1,2,3,4,5,6,7]
-
-var promesas = ids.map( id => obtenerPersonaje(id))
-
-Promise
-    .all(promesas)
-    .then(personajes => console.table(personajes))
-    .catch(onError)
-
-
+obtenerPersonajes()
