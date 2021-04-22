@@ -14,9 +14,10 @@ class Juego {
     }
 
     inicializar() {
-        this.elegirColor = this.elegirColor.bind(this)
+        this.elegirColor = this.elegirColor.bind(this);
+        this.siguienteNivel.bind(this);
         btnEmpezar.classList.add('hide');
-        this.nivel = 1
+        this.nivel = 1;
         this.colores = {
             celeste,
             violeta,
