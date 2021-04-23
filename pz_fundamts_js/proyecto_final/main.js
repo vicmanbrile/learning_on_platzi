@@ -8,21 +8,30 @@ const ULTIMO_NIVEL = 10;
 
 class Juego {
     constructor() {
+        this.inicializar = this.inicializar.bind(this)
         this.inicializar()
         this.generarSecuencia()
-        this.siguienteNivel()
+        setTimeout(this.siguienteNivel,500)
     }
 
     inicializar() {
         this.elegirColor = this.elegirColor.bind(this);
-        this.siguienteNivel.bind(this);
-        btnEmpezar.classList.add('hide');
+        this.siguienteNivel = this.siguienteNivel.bind(this);
+        // this.iluminarSecuencia = this.iluminarSecuencia.bind(this);
+        this.toggleBtnEmpezar()
         this.nivel = 1;
         this.colores = {
             celeste,
             violeta,
             naranja,
             verde
+        }
+    }
+    toggleBtnEmpezar(){
+        if (btnEmpezar.classList.contains('hide')){
+            btnEmpezar.classList.remove('hide');
+        } else {
+            btnEmpezar.classList.add('hide');
         }
     }
 
@@ -35,22 +44,22 @@ class Juego {
             case 0:
                 return 'celeste'
             case 1:
-                return 'naranja'
-            case 2:
-                return 'verde'
-            case 3:
                 return 'violeta'
+            case 2:
+                return 'naranja'
+            case 3:
+                return 'verde'
         }
     }
     transformarColorToNumero(color){
         switch (color){
             case 'celeste':
                 return 0
-            case 'naranja':
-                return 1
-            case 'verde':
-                return 2
             case 'violeta':
+                return 1
+            case 'naranja':
+                return 2
+            case 'verde':
                 return 3
         }
     }
@@ -94,21 +103,33 @@ class Juego {
         const nombreColor = x.target.dataset.color
         const numeroColor = this.transformarColorToNumero(nombreColor);
         this.iluminarColor(nombreColor);
-        if (numeroColor === this.secuencia[this.nivel]) {
+        if (numeroColor === this.secuencia[this.subnivel]) {
             console.log('Correcto')
             this.subnivel++
             if(this.subnivel === this.nivel){
                 this.nivel++;
                 this.elimnarEventosClick()
                 if(this.nivel === ULTIMO_NIVEL + 1){
-                    // Gano
+                    this.ganoJuego()
                 } else {
-                    setTimeout(this.siguienteNivel, 2000);
+                    setTimeout(this.siguienteNivel, 1000);
                 }
             }
         } else {
-            // Perdio
+            this.perdioJuego()
         }
+    }
+    ganoJuego(){
+        swal('vicmanbrile', 'Ganaste el juego', 'success')
+            .then(this.inicializar)
+    }
+
+    perdioJuego(){
+        swal('vicmanbrile', 'Perdiste el juego', 'error')
+            .then(() => {
+                this.elimnarEventosClick()
+                this.inicializar()
+            })
     }
 
 }
