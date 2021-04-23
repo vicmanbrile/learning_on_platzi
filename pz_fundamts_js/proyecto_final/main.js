@@ -3,6 +3,7 @@ const violeta = document.getElementById('violeta')
 const naranja = document.getElementById('naranja')
 const verde = document.getElementById('verde')
 const btnEmpezar = document.getElementById('btnEmpezar')
+const mostrarNivel = document.getElementById('NivelUsuario');
 
 const ULTIMO_NIVEL = 10;
 
@@ -107,6 +108,7 @@ class Juego {
             console.log('Correcto')
             this.subnivel++
             if(this.subnivel === this.nivel){
+              mostrarNivel.innerHTML = `Estas en el nivel: ${this.nivel} / ${ULTIMO_NIVEL}`;
                 this.nivel++;
                 this.elimnarEventosClick()
                 if(this.nivel === ULTIMO_NIVEL + 1){
