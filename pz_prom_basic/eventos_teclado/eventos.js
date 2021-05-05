@@ -47,3 +47,11 @@ function dibujarTeclado(evento){
     break;
   }
 }
+
+cuadro.addEventListener("mousemove", movimientoMouse)
+cuadro.addEventListener("mousedown", movimientoMouse)
+
+
+function movimientoMouse(evento) {
+  console.log(evento)
+}
