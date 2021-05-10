@@ -1,4 +1,4 @@
-// Params
+// Params --->
 
 function informacion(name, age, country) {
     var name = name || 20
@@ -21,7 +21,7 @@ informacion2("Manuel", 21, 'Argentina');
 
 
 
-//Template literals 
+//Template literals --->
 
 let Hello = 'Hello'
 let World = 'World'
@@ -32,3 +32,36 @@ console.log(epicPhrase)
 //es6
 let epicPhrase2 = `${Hello} ${World}`
 console.log(epicPhrase2)
+
+
+//Multilinea --->
+let lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum soluta perspiciatis, \n' + 
+'in, quo dolores illo totam quod, officiis minima consectetur debitis minus voluptatem eaque reprehenderit \n' +
+'animi doloribus veniam! Ipsum, iure?'
+
+//es6 => No es necesario el \n
+let lorem2 = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum soluta perspiciatis,
+in, quo dolores illo totam quod, officiis minima consectetur debitis minus voluptatem eaque reprehenderit
+animi doloribus veniam! Ipsum, iure?`
+
+console.log(lorem)
+console.log(lorem2)
+
+//Spread Operator --->
+let person = {
+    'name': 'Victor',
+    'age': 19,
+    'country' : 'Mexico'
+}
+
+console.log(person.name, person.age, person.country)
+
+//es6
+let { name, age, country} = person;
+
+console.log(name, age, country)
+
+//Destructuracion 
+
+let team1 = ['Oscar', 'Julian', 'Ricardo']
+let tema2 = ['Valeria', 'Yesica', 'Camila']
