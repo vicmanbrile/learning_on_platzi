@@ -39,12 +39,13 @@ let lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum s
 'in, quo dolores illo totam quod, officiis minima consectetur debitis minus voluptatem eaque reprehenderit \n' +
 'animi doloribus veniam! Ipsum, iure?'
 
+console.log(lorem)
+
 //es6 => No es necesario el \n
 let lorem2 = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum soluta perspiciatis,
 in, quo dolores illo totam quod, officiis minima consectetur debitis minus voluptatem eaque reprehenderit
 animi doloribus veniam! Ipsum, iure?`
 
-console.log(lorem)
 console.log(lorem2)
 
 //Spread Operator --->
@@ -61,7 +62,7 @@ let { name, age, country} = person;
 
 console.log(name, age, country)
 
-//Destructuracion 
+//Destructuracion --->
 
 let team1 = ['Oscar', 'Julian', 'Ricardo']
 let tema2 = ['Valeria', 'Yesica', 'Camila']
