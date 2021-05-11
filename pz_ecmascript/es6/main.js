@@ -66,3 +66,21 @@ console.log(name, age, country)
 
 let team1 = ['Oscar', 'Julian', 'Ricardo']
 let tema2 = ['Valeria', 'Yesica', 'Camila']
+
+let educacion = ['David','Oscar', 'Julian', 'Ricardo','Valeria', 'Yesica', 'Camila']
+console.log(educacion)
+
+//es6
+let educacion1 = ['David', ...team1, ...tema2]
+
+console.log(educacion1)
+
+//LET CONST VAR--->
+/*
+var esta disponible en el scope global.
+
+//es6
+
+let esta en el scope de bloque de codigo.
+Conts es constante con su valor.
+*/
