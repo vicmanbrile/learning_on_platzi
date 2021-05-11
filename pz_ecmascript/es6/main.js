@@ -84,3 +84,55 @@ var esta disponible en el scope global.
 let esta en el scope de bloque de codigo.
 Conts es constante con su valor.
 */
+
+//Parametros en Objetos --->
+
+let name = 'Victor'
+let age = 19
+
+obj = {name: name, age: age}
+
+console.log(obj)
+
+//es6
+
+obj2 = { name, age}
+
+console.log(obj2)
+
+//Arrow Functions --->
+
+const names = [
+    {name: 'Victor', age: 19},
+    {name: 'Manuel', age: 12}
+]
+
+let listOfNames = names.map(function(item) {
+    console.log(item.name)
+})
+
+//es6
+
+let listOfNames2 = names.map(item => console.log(item.name))
+
+let listOfNames3 = (name, age) => {}
+
+const listOfNames4 = name => {}
+
+const square = num => num * num
+
+//Promesas --->
+const HelloPromise = () => {
+    return new Promise((Resuelto, FueError) => {
+        if(false) {
+            Resuelto('Correcto')
+        } else {
+            FueError('Error')
+        }
+    })
+}
+
+HelloPromise()
+    .then(Resuelto => console.log(Resuelto))
+    .then(Resuelto => console.log('La promesa fue cumplida'))
+    .catch(FueError => console.error('La promesa no fue cumplida'))
