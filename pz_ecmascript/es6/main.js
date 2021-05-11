@@ -86,10 +86,12 @@ Conts es constante con su valor.
 */
 
 //Parametros en Objetos --->
+/*
 
 let name = 'Victor'
 let age = 19
 
+*/
 obj = {name: name, age: age}
 
 console.log(obj)
@@ -124,7 +126,7 @@ const square = num => num * num
 //Promesas --->
 const HelloPromise = () => {
     return new Promise((Resuelto, FueError) => {
-        if(false) {
+        if(true) {
             Resuelto('Correcto')
         } else {
             FueError('Error')
@@ -136,3 +138,37 @@ HelloPromise()
     .then(Resuelto => console.log(Resuelto))
     .then(Resuelto => console.log('La promesa fue cumplida'))
     .catch(FueError => console.error('La promesa no fue cumplida'))
+
+
+//Classes --->
+class Calculator {
+    constructor(){
+        this.valueA = 0
+        this.valueB = 0
+    }
+    Sumar(valueA,valueB){
+        this.valueA = valueA;
+        this.valueB = valueB;
+
+        return this.valueA + this.valueB
+    }
+}
+
+const suma = new Calculator()
+console.log(suma.Sumar(13,6))
+
+//Imports and exports --->
+const hello = require('./index')
+
+console.log(hello())
+
+//Generator --->
+function* helloWorld(){
+    if(true){
+        yield 'Hello, '
+    }
+    if(true){
+        yield 'Hello, '
+    }
+}
+const generatorHello = helloWorld();
