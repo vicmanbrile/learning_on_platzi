@@ -168,7 +168,7 @@ function* helloWorld(){
         yield 'Hello, '
     }
     if(true){
-        yield 'Hello, '
+        yield 'World'
     }
 }
 const generatorHello = helloWorld();
