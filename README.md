@@ -12,3 +12,8 @@ El repositorio con todos mis cursos de que necesito manejar archivos.
 6. [Paki Man](http://vicmanbrile.github.io/learning_on_platzi/pz_prom_basic/pakiman)
 7. [FizzBuzz](http://vicmanbrile.github.io/learning_on_platzi/pz_prom_basic/FizzBuzz)
 8. [Cajero Automatico](http://vicmanbrile.github.io/learning_on_platzi/pz_prom_basic/cajeroAutomatico)
+
+
+### Fundamentos JavaScript
+1. [Simon dice](http://vicmanbrile.github.io/learning_on_platzi/pz_fundamts_js/proyecto_final)
+
