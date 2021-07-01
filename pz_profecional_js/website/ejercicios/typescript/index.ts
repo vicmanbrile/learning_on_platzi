@@ -1,11 +1,5 @@
 console.log('Hello Typescripts')
 
-function add(a : number, b : number) {
-  return a + b
-}
-
-const sum = add(2,3)
-
 //Tipos de Datos
 
 //Boolean --->
@@ -50,3 +44,30 @@ comodin = {type: 'Wildcard'}
 
 //Object
 let someObject : object = {type: 'Wildcard'}
+
+
+/*
+  Funciones
+*/
+
+function adde(a: number, b: number) : number {
+  return a + b
+}
+
+const summs = adde(1,2)
+
+function createAdder(a: number) : (number) => number {
+  return function (b: number) {
+    return a + b
+  }
+}
+
+const addFour = createAdder(4)
+const forPlus6 = addFour(6)
+
+
+function FullName(firstName : string, lastName: string = 'brisenio') : string{
+  return `${firstName} ${lastName}`
+}
+
+const victor = FullName('Victor')
