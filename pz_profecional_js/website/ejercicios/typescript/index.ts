@@ -5,3 +5,48 @@ function add(a : number, b : number) {
 }
 
 const sum = add(2,3)
+
+//Tipos de Datos
+
+//Boolean --->
+let muted : boolean = true
+
+//Numeros ---->
+let numerador : number = 42
+let denominador : number = 6
+let resultyado = numerador / denominador
+
+//Strings ---> 
+let nombre : string = 'Victor'
+let saludo : string = `${nombre}`
+
+
+///Arrays ---> 
+let people : string[] = []
+
+people = ['Isabel', 'Nicole', 'Rauls']
+
+let peopleAndNumbers : Array<string | number> = []
+
+peopleAndNumbers = ['Isabel', 'Nicole', 'Rauls']
+peopleAndNumbers.push(8900)
+
+
+//Enum --->
+enum Color{
+  rojo ='Rojo', 
+  verde = 'Verde',
+  azul = 'Azul'
+}
+
+let colorFavorito : Color = Color.rojo
+
+console.log(`Mi color favorito es ${colorFavorito}`)
+
+
+//Anny
+let comodin : any = 'Joker'
+comodin = {type: 'Wildcard'}
+
+//Object
+let someObject : object = {type: 'Wildcard'}
