@@ -71,3 +71,33 @@ function FullName(firstName : string, lastName: string = 'brisenio') : string{
 }
 
 const victor = FullName('Victor')
+
+// Interfaces ---> \
+enum Color2{
+  Rojo = 'Rojo',
+  Verde= 'Verde'
+}
+
+interface Rectangulo {
+  ancho: number,
+  alto: number,
+  color ? : Color2,
+}
+
+let rect: Rectangulo = {
+  ancho: 4,
+  alto: 6,
+  color: Color2.Verde
+}
+
+function area(r: Rectangulo){
+  return r.alto * r.ancho
+}
+
+const AreaRect = area(rect)
+
+rect.toString = function () {
+  return this.color ?  `Un rectangulo ${this.color}` : 'Un rectangulo'
+} 
+
+console.log(rect.toString())
