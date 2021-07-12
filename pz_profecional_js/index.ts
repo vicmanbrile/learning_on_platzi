@@ -1,5 +1,5 @@
-import MediaPlayer from './assets/MediaPlayer.js';
-import AutoPlay from './assets/plugins/AutoPlay.js'
+import MediaPlayer from './assets/MediaPlayer';
+import AutoPlay from './assets/plugins/AutoPlay'
 
 const video = document.querySelector('video')
 const playButton = document.getElementById('playButton')
