@@ -9,10 +9,10 @@ const player = new MediaPlayer({
   plugins: [new AutoPlay(), new AutoPause(), new Ads()],
 });
 
-const playButton: HTMLElement = document.querySelector('#playButton');
+const playButton = document.querySelector('#playButton');
 playButton.onclick = () => player.togglePlay();
 
-const muteButton: HTMLElement = document.querySelector('#muteButton');
+const muteButton = document.querySelector('#muteButton');
 muteButton.onclick = () => {
   if (player.media.muted) {
     player.unmute();
