@@ -1,54 +1,54 @@
-interface Observer {
-  update: (data: any) => void;
+interface Observer{
+  update: (data: any) => void
 }
 
-interface Subject {
-  subscribe: (observer: Observer) => void;
-  unsubscribe: (observer: Observer) => void;
+interface Subject{
+  subscribe: (observer: Observer) => void
+  unsubcribe: (observer: Observer) => void
 }
 
-class BitcoinPrice implements Subject {
-  observers: Observer[] = [];
+class BitCoinPrice implements Subject {
 
-  constructor() {
-    const el: HTMLInputElement = document.querySelector('#value');
+  constructor(){
+    const el : HTMLInputElement = document.querySelector('#value')
     el.addEventListener('input', () => {
-      this.notify(el.value);
-    });
+      this.notify(el.value)
+    })
   }
 
-  subscribe(observer: Observer) {
-    this.observers.push(observer);
+  observers : Observer[] = []
+  subscribe (observer: Observer) {
+    this.observers.push(observer)
   }
 
-  unsubscribe(observer: Observer) {
+  unsubcribe (observer: Observer) {
     const index = this.observers.findIndex(obs => {
-      return obs === observer;
-    });
+      return obs === observer
+    })
 
-    this.observers.splice(index, 1);
+    this.observers.splice(index, 1)
   }
 
-  notify(data: any) {
-    this.observers.forEach(observer => observer.update(data));
+  notify (data: any){
+    this.observers.forEach(observer => observer.update(data))
   }
 }
 
-class PriceDisplay implements Observer {
-  private el: HTMLElement;
+class PriceDesplay implements Observer{
+  private el : HTMLElement
 
-  constructor() {
-    this.el = document.querySelector('#price');
+  constructor(){
+    this.el = document.querySelector('#price')
   }
 
   update(data: any) {
-    this.el.innerText = data;
+    this.el.innerText = data
   }
 }
 
-const value = new BitcoinPrice();
-const display = new PriceDisplay();
+const value = new BitCoinPrice()
+const display = new PriceDesplay()
 
-value.subscribe(display);
+value.subscribe(display)
 
-setTimeout(() => value.unsubscribe(display), 5000);
+setTimeout(() => value.unsubcribe(display), 5000)
