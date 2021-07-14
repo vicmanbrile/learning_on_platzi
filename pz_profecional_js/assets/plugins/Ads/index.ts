@@ -1,5 +1,5 @@
 import MediaPlayer from '../../MediaPlayer';
-import Ads, {Ad} from './ads';
+import Ads, {Ad} from './Ads';
 
 class AdsPlugin {
     private ads : Ads
