@@ -8,8 +8,24 @@
     <title>Curso Practico de JS</title>
 </head>
 <body>
-    <h1>Calculadora Figuras Geometricas</h1>
-
-    <script src="./figuras.ts"></script>
+    <head>
+        <h1>Calculadora Figuras Geometricas</h1>
+    </head>
+    <main>
+        <section>
+            <h2>Calcula de area y perimeto de un cuadrado</h2>
+            <form>
+                <label for="InputCuadrado"></label>
+                <input id="InputCuadrado" type="number" />
+                <button type="button" onclick="calcularPerimetroCuadrado()">
+                    Calcular el perímetro
+                </button>
+                <button type="button" onclick="calcularAreaCuadrado()">
+                    Calcular el área
+                </button>
+            </form>
+        </section>
+    </main>
+    <script src="./figuras.js"></script>
 </body>
 </html>

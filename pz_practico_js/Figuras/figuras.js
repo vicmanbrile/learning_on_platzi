@@ -1,8 +1,6 @@
 //Codigo del cuadrado
 class Cuadrado {
-    lado: number
-
-    constructor(lado : number){
+    constructor(lado){
         this.lado = lado
     }
     mide(){
@@ -28,22 +26,8 @@ console.log(miCuadrado.area());
 console.groupEnd()
 
 
-//Codigo del triangulo
-
-interface LadosTriangulo {
-    lado_a: number,
-    lado_b: number,
-    lado_c_base: number,
-    altura: number,
-}
-
 class Triangulo {
-    lado_a : number
-    lado_b : number
-    lado_c_base: number
-    altura: number
-
-    constructor(lados: LadosTriangulo){
+    constructor(lados){
         this.lado_a = lados.lado_a
         this.lado_b = lados.lado_b
         this.lado_c_base = lados.lado_c_base
@@ -82,16 +66,9 @@ console.log(miTriangulo.area())
 
 
 console.groupEnd()
-//Código del Circulos
-
-interface Circulos{
-    radio: number
-}
-
+//Código del Circulo
 class Circulo{
-    rad: number
-    PI: number
-    constructor(circulo : Circulos){
+    constructor(circulo){
         this.rad = circulo.radio
         this.PI = Math.PI
     }
@@ -136,3 +113,16 @@ console.log(miCirculo.area())
 
 
 console.groupEnd();
+
+function calcularPerimetroCuadrado(){
+
+}
+
+function calcularAreaCuadrado(){
+    let input= document.getElementById('InputCuadrado')
+    let value = input.value
+
+    let area = new Cuadrado(value)
+
+    alert(area.area())
+}
