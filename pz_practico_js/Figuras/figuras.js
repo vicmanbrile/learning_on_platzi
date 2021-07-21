@@ -68,7 +68,7 @@ console.log(miTriangulo.area())
 console.groupEnd()
 //Código del Circulo
 class Circulo{
-    constructor(circulo : Circulos){
+    constructor(circulo){
         this.rad = circulo.radio
         this.PI = Math.PI
     }
