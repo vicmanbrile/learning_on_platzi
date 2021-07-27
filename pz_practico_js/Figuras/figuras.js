@@ -3,7 +3,7 @@ class Cuadrado {
     constructor(lado){
         this.lado = lado
     }
-    mide(){
+    lados(){
         return `Los lados del cuadrado miden: ${this.lado} cms`
     }
     perimetro(){
@@ -24,7 +24,7 @@ class Triangulo {
         this.altura = lados.altura
     }
 
-    ladosTriangulo () {
+    lados () {
         return `Los lados del triángulo miden: ${this.lado_a} cms, ${this.lado_b} cms, ${this.lado_c_base} cms.`
     }
 
@@ -41,8 +41,8 @@ class Triangulo {
 
 //Código del Circulo
 class Circulo{
-    constructor(circulo){
-        this.rad = circulo.radio
+    constructor(radio){
+        this.rad = radio
         this.PI = Math.PI
     }
 
@@ -71,6 +71,15 @@ class Circulo{
 
 }
 
+
+// Inner la respuesta en el HTML
+function printRespuesta(respuesta){
+    let espacio = document.getElementById('respuesta_inner')
+
+    espacio.innerText = respuesta
+}
+
+
 // Lados
 function ladosCudrado(){
     let input= document.getElementById('InputCuadrado')
@@ -78,7 +87,27 @@ function ladosCudrado(){
 
     let cuadrado = new Cuadrado(value)
 
-    alert(cuadrado.mide())
+    printRespuesta(cuadrado.lados())
+}
+
+function ladosTriangulo(){
+    let input= {
+        lado_a : Number(document.getElementById('A_ladoTriangulo').value),
+        lado_b : Number(document.getElementById('B_ladoTriangulo').value),
+        lado_c_base : Number(document.getElementById('C_ladoTriangulo').value),
+        altura : Number(document.getElementById('alturaTriangulo').value),
+    }
+
+    let triangulo = new Triangulo(input)
+
+    printRespuesta(triangulo.lados())
+}
+
+function diametroCirculo(){
+    let input = Number(document.getElementById('radioCirculo').value)
+    let circulo = new Circulo(input) 
+
+    printRespuesta(circulo.diametro_verbal())
 }
 
 
@@ -89,11 +118,27 @@ function perimetroCuadrado(){
 
     let cuadrado = new Cuadrado(value)
 
-    alert(cuadrado.perimetro())
+    printRespuesta(cuadrado.perimetro())
 }
 
 function perimetroTriangulo(){
-    
+    let input= {
+        lado_a : Number(document.getElementById('A_ladoTriangulo').value),
+        lado_b : Number(document.getElementById('B_ladoTriangulo').value),
+        lado_c_base : Number(document.getElementById('C_ladoTriangulo').value),
+        altura : Number(document.getElementById('alturaTriangulo').value),
+    }
+
+    let triangulo = new Triangulo(input)
+
+    printRespuesta(triangulo.perimetro())
+}
+
+function perimetroCirculo(){
+    let input = Number(document.getElementById('radioCirculo').value)
+    let circulo = new Circulo(input) 
+
+    printRespuesta(circulo.perimetro())
 }
 
 //Area
@@ -103,5 +148,25 @@ function areaCuadrado(){
 
     let cuadrado = new Cuadrado(value)
 
-    alert(cuadrado.area())
+    printRespuesta(cuadrado.area())
+}
+
+function areaTriangulo(){
+    let input= {
+        lado_a : Number(document.getElementById('A_ladoTriangulo').value),
+        lado_b : Number(document.getElementById('B_ladoTriangulo').value),
+        lado_c_base : Number(document.getElementById('C_ladoTriangulo').value),
+        altura : Number(document.getElementById('alturaTriangulo').value),
+    }
+
+    let triangulo = new Triangulo(input)
+
+    printRespuesta(triangulo.area())
+}
+
+function areaCirculo(){
+    let input = Number(document.getElementById('radioCirculo').value)
+    let circulo = new Circulo(input) 
+
+    printRespuesta(circulo.area())
 }

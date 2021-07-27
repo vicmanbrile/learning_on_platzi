@@ -34,16 +34,16 @@
             <h2>Calcula un Triangulo</h2>
             <form>
                 <label for="A_ladoTriangulo">Lado A</label>
-                <input id="A_ladoTriangulo">
+                <input type="number" id="A_ladoTriangulo">
                 
                 <label for="B_ladoTriangulo">Lado B</label>
-                <input id="B_ladoTriangulo">
+                <input type="number" id="B_ladoTriangulo">
 
                 <label for="C_ladoTriangulo">Lado C</label>
-                <input id="C_ladoTriangulo">
+                <input type="number" id="C_ladoTriangulo">
 
                 <label for="alturaTriangulo">Altura</label>
-                <input id="alturaTriangulo">
+                <input type="number" id="alturaTriangulo">
 
                 <button type="button" onclick="ladosTriangulo()">
                     Lados
@@ -60,10 +60,19 @@
             <h2>Calcula un Circulo</h2>
             <form>
                 <label for="inputCirulo">Radio</label>
-                <input type="number">
+                <input type="number" id="radioCirculo">
+                <button type="button" onclick="diametroCirculo()">Diametro</button>
+                <button type="button" onclick="perimetroCirculo()">Perimetro</button>
+                <button type="button" onclick="areaCirculo()">Area</button>
             </form>
         </section>
     </main>
+    <footer>
+        <div id="respuesta">
+            <h2>Respuesta...</h2>
+            <p id="respuesta_inner"></p>
+        </div>
+    </footer>
     <script src="./figuras.js"></script>
 </body>
 </html>
