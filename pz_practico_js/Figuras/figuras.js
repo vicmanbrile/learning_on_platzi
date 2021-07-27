@@ -15,16 +15,6 @@ class Cuadrado {
         return `La area del cuadrado: ${area} cms^3`
     }
 }
-console.group("Codigo del Cuadrado")
-
-const miCuadrado = new Cuadrado(5);
-
-console.log(miCuadrado.mide());
-console.log(miCuadrado.perimetro());
-console.log(miCuadrado.area());
-
-console.groupEnd()
-
 
 class Triangulo {
     constructor(lados){
@@ -49,23 +39,6 @@ class Triangulo {
     }
 }
 
-console.group("Codigo del triangulo")
-
-const medidasTriangulo = {
-    lado_a: 6,
-    lado_b: 6,
-    lado_c_base: 4,
-    altura: 5.5,
-}
-
-const miTriangulo = new Triangulo(medidasTriangulo)
-
-console.log(miTriangulo.ladosTriangulo())
-console.log(miTriangulo.perimetro())
-console.log(miTriangulo.area())
-
-
-console.groupEnd()
 //Código del Circulo
 class Circulo{
     constructor(circulo){
@@ -98,31 +71,37 @@ class Circulo{
 
 }
 
-console.group("Circulos");
-
-const medidasCirculo = {
-    radio: 4
-}
-
-const miCirculo = new Circulo(medidasCirculo)
-
-console.log(miCirculo.radio())
-console.log(miCirculo.diametro_verbal())
-console.log(miCirculo.perimetro())
-console.log(miCirculo.area())
-
-
-console.groupEnd();
-
-function calcularPerimetroCuadrado(){
-
-}
-
-function calcularAreaCuadrado(){
+// Lados
+function ladosCudrado(){
     let input= document.getElementById('InputCuadrado')
-    let value = input.value
+    let value = Number(input.value)
 
-    let area = new Cuadrado(value)
+    let cuadrado = new Cuadrado(value)
 
-    alert(area.area())
+    alert(cuadrado.mide())
+}
+
+
+//Perimetros
+function perimetroCuadrado(){
+    let input= document.getElementById('InputCuadrado')
+    let value = Number(input.value)
+
+    let cuadrado = new Cuadrado(value)
+
+    alert(cuadrado.perimetro())
+}
+
+function perimetroTriangulo(){
+    
+}
+
+//Area
+function areaCuadrado(){
+    let input= document.getElementById('InputCuadrado')
+    let value = Number(input.value)
+
+    let cuadrado = new Cuadrado(value)
+
+    alert(cuadrado.area())
 }
