@@ -170,3 +170,26 @@ function areaCirculo(){
 
     printRespuesta(circulo.area())
 }
+
+function trianguloIsosceles(){
+    let G_ladoA = Number(document.getElementById('A_ladoTriangulo_isosceles').value)
+    let G_ladoB = Number(document.getElementById('B_ladoTriangulo_isosceles').value)
+    let G_ladoBase = Number(document.getElementById('C_ladoTriangulo_isosceles').value)
+
+
+    if(G_ladoA != G_ladoB) {
+        printRespuesta('Los lados a y b no son iguales')
+    } else {
+        let P_ladoB = G_ladoBase / 2
+        let P_ladoBase = G_ladoA
+
+        let P_ladoB_cuadrado = P_ladoB * P_ladoB
+        let P_ladoBase_cuadrado = P_ladoBase * P_ladoBase
+
+        let P_ladoA = Math.sqrt(P_ladoBase_cuadrado - P_ladoB_cuadrado)
+
+        let G_Altura = P_ladoA
+
+        printRespuesta(G_Altura)
+    }
+}
