@@ -18,19 +18,20 @@ header > h1 {
 }
 
 main{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     height: auto;
 }
 
 .seccionesCals{
     min-width: 60%;
     max-width: 80%;
-    margin: auto;
+    margin: 5% auto;
+    height: 150%;
+    
 }
 
-#sectionTrian > form{
+.seccionesCals > form{
     display: flex;
     flex-direction: column;
     align-content: center;
