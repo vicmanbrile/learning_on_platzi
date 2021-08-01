@@ -1,0 +1,12 @@
+{
+  "name": "pz_practico_js",
+  "version": "1.0.0",
+  "description": "## Taller #1: Figuras Geometricas",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel Figuras/index.html --port 8080 "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
