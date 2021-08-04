@@ -19,30 +19,37 @@ class aplicacionDescuentos{
         this.descuento = inputs.descuento
         this.cupon = inputs.cupon
         this.validacionCupones()
-        this.restarDescuento()
+        this.restarDescuentos()
     }
 
     validacionCupones() {
-
-        _cupones.find(() => {
-            _cupones.name === this.cupon
+        _cupones.find(item => {
+            if (item.name === this.cupon) {
+				this.userCoupon = {
+					verified: true,
+					valor: item.discount
+				}
+			} else {
+				this.userCoupon = {
+					verified: false,
+				}
+			}
         })
-
-        if (this.cupon === _cupones.name) {
-            this.userCoupon = true
-        } else {
-            this.userCoupon = false
-        }
     }
 
-    restarDescuento(){
-        let desc_decimal = this.descuento / 100 
-        let precio_desc = 1 - desc_decimal
-    
-        this.total = this.precio * precio_desc
+    restarDescuentos(){
+		let descuento_sin_cupon = this.descontar(this.precio, this.descuento)
+		
+		let descuento_con_cupon = this.userCoupon.verified ? this.descontar(descuento_sin_cupon,this.userCoupon.valor) : 0
+		
+		this.total = descuento_sin_cupon + descuento_con_cupon
     }
+	
+	descontar(valor, descuento){
+		let desc_decimal = 1  - (descuento / 100)	
+		return valor * desc_decimal
+	}
 
-    
 
     printResultado(){
         document.getElementById('Resultado_').innerText = this.total
