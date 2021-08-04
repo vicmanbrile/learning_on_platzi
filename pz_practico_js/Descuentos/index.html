@@ -4,12 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Descuentos</title>
 </head>
 <body>
-    <h1>
-        Porcentaje y Descuentos
-    </h1>
+    <section>
+        <h1>
+            Porcentaje y Descuentos
+        </h1>
+        <form>
+            <!--Precio-->
+            <label for="Precio_">Precio $n :</label>
+            <input id="Precio_" type="number">
+            <!--Descuento-->
+            <label for="Descuento_">Descuento n% :</label>
+            <input id="Descuento_" type="number">
+            <!--Cupon-->
+            <label for="Descuento_cupon">Cupon descuento :</label>
+            <input id="Descuento_cupon" type="text">
+
+            <input type="button" value="Calcular" onclick="calculadoraDesc()">
+        </form>
+
+        <p id="Resultado_"></p>
+
+    </section>
+    <script src="./descuentos.js" type="module"></script>
     <script src="./main.js"></script>
 </body>
 </html>
