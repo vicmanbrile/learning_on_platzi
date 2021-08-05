@@ -42,7 +42,11 @@ class aplicacionDescuentos{
 		
 		let descuento_con_cupon = this.userCoupon.verified ? this.descontar(descuento_sin_cupon,this.userCoupon.valor) : 0
 		
-		this.total = descuento_sin_cupon + descuento_con_cupon
+        if(descuento_con_cupon === 0){
+            this.total = descuento_sin_cupon
+        } else {
+            this.total = descuento_con_cupon
+        }
     }
 	
 	descontar(valor, descuento){
