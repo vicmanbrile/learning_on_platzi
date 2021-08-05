@@ -62,6 +62,7 @@ main{
     color: white;
     padding: 1rem;
     font-size: 2rem;
+    outline: none;
 }
 
 .seccionesCals > form > button{
