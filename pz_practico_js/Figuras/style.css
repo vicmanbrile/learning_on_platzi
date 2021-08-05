@@ -6,11 +6,18 @@
 
 html{
     width: 100vw;
+    font-size: 62.50%;
+    color: #fff;
+}
+
+body{
+    background: rgb(109, 109, 131);
 }
 
 header{
     width: 100%;
-    padding: 2%;
+    padding: 2rem;
+    font-size: 1.6rem;
 }
 
 header > h1 {
@@ -25,13 +32,43 @@ main{
 }
 
 .seccionesCals{
-    min-width: 60%;
-    max-width: 80%;
-    margin: auto;
+    width: 60%;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px #fff solid;
 }
 
-#sectionTrian > form{
+.seccionesCals > form{
     display: flex;
     flex-direction: column;
     align-content: center;
+    justify-items: center;
+}
+
+.seccionesCals > h2 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.seccionesCals > form > label{
+    font-size: 1.6rem;
+    margin: 1rem 0;
+}
+
+.seccionesCals > form > input{
+    background: rgba(255,255,255, 0.4);
+    border-radius: 1.5rem;
+    margin-bottom: 2rem;
+    color: white;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.seccionesCals > form > button{
+    background: rgba(0,0,0, 0.8);
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    color: white;
+    padding: 1rem;
+    font-size: 2rem;
 }
