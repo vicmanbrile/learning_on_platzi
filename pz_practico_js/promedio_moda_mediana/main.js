@@ -1,8 +1,8 @@
-    /* 
+/* 
 
-        Calculado la Media Aritmetica --->
+    Calculado la Media Aritmetica --->
 
-    */
+*/
 function calcularMediaAritmetica(list){
     reducionSumar = (accumulator, currentValue) => {
         return accumulator + currentValue
@@ -12,11 +12,11 @@ function calcularMediaAritmetica(list){
 
     return listaSumada / list.length
 }
-    /*
+/*
 
-        Calculando la Mediana Aritmetica --->
+    Calculando la Mediana Aritmetica --->
 
-    */
+*/
 class calculadoraMediana{
     constructor(list){
         this.list = list.sort((a,b) => a - b)
@@ -45,3 +45,9 @@ class calculadoraMediana{
         return this.mediana
     }
 }
+/*
+
+    Calculando la Moda Aritmetica --->
+
+*/
+const mode = (list) => list.sort((a,b) => list.filter(v => v===a).length - list.filter(v => v===b).length).pop()
