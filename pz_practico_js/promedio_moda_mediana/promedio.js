@@ -51,3 +51,6 @@ class calculadoraMediana{
 
 */
 const mode = (list) => list.sort((a,b) => list.filter(v => v===a).length - list.filter(v => v===b).length).pop()
+
+//Exportacion de modulos
+module.exports =  { mode, calculadoraMediana,  calcularMediaAritmetica}

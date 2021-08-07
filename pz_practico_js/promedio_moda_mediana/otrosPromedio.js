@@ -12,3 +12,5 @@ class calculadoraPromedioPonderado{
         return values.reduce((prev, current) => prev + current)
     }
 }
+//Exportacion de modulos
+module.exports =  { calculadoraPromedioPonderado }
