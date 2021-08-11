@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100vh;
+    width: 100vw;
+}
+
+body{
+    background: rgb(80, 79, 79);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;<
+}
+
+body > section {
+    width: 30%;
+    height: 60%;
+    margin: 20% auto;
+}
