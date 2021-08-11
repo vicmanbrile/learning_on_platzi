@@ -14,3 +14,6 @@ El repositorio con todos mis cursos de que necesito manejar archivos.
 
 ### Fundamentos JavaScript
 1. [Simon dice](http://vicmanbrile.github.io/learning_on_platzi/pz_fundamts_js/proyecto_final)
+
+### Practico JavaScript
+1. [Calculadoras de Figuras](http://vicmanbrile.github.io/learning_on_platzi/pz_practico_js/Figuras)

@@ -1,5 +1,5 @@
 {
-  "name": "@sparragus/platzimediaplayer",
+  "name": "@vicmanbrile/platzi_mediaplayer",
   "version": "1.0.0",
   "description": "",
   "main": "lib/MediaPlayer.js",
@@ -7,10 +7,14 @@
     "build": "tsc src/**/*.ts src/plugins/*.ts src/plugins/**/*.ts --outDir lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Platzi",
+    "Curse",
+    "MediaPlayer"
+  ],
+  "author": "vicmanbrile",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^3.5.3"
+    "typescript": "^4.3.5"
   }
 }

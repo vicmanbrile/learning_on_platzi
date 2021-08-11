@@ -1,84 +1,103 @@
-// // Interfaces
-// enum Color {
-//   Rojo = 'Rojo',
-//   Verde = 'Verde',
-// }
+console.log('Hello Typescripts')
 
-import { EMULTIHOP } from "constants";
+//Tipos de Datos
 
-// interface Rectangulo {
-//   ancho: number;
-//   alto: number;
-//   color?: Color;
-// }
+//Boolean --->
+let muted : boolean = true
 
-// let rect: Rectangulo = {
-//   ancho: 4,
-//   alto: 6,
-//   // color: Color.Rojo,
-// };
-
-// function area(r: Rectangulo): number {
-//   return r.alto * r.ancho;
-// }
-
-// const areaRect = area(rect);
-// console.log(areaRect);
-
-// rect.toString = function() {
-//   return this.color ? `Un rectangulo ${this.color}` : `Un rectangulo`;
-// };
-
-// console.log(rect.toString());
-
-
-console.log('Hello TypeScript')
-
-function add(a : number, b : number) {
-  return a + b
-}
-
-const summ = add(2,3)
-
-
-//Bulean -->
-let muted: boolean = true;
-muted = false
-
-// Numeros -->
-let age : number = 6
+//Numeros ---->
 let numerador : number = 42
-let denominador : number = age;
-let resultado : number= numerador / denominador
+let denominador : number = 6
+let resultyado = numerador / denominador
 
-//string -->
+//Strings ---> 
 let nombre : string = 'Victor'
-let saludo = `Me llamo ${nombre}`
+let saludo : string = `${nombre}`
 
-//Arrays -->
- let people: string[] = [];
- people = ['Isabel', 'Nicole', 'Raul']
- //people.push(12)
-let peopleNumber: Array < string | number > = []
-peopleNumber.push(212, "Hola")
 
-// Enum
-enum Color {
-  Rojo = 'Rojo',
-  Verde = 'Verde',
-  Azul = 'Azul'
+///Arrays ---> 
+let people : string[] = []
+
+people = ['Isabel', 'Nicole', 'Rauls']
+
+let peopleAndNumbers : Array<string | number> = []
+
+peopleAndNumbers = ['Isabel', 'Nicole', 'Rauls']
+peopleAndNumbers.push(8900)
+
+
+//Enum --->
+enum Color{
+  rojo ='Rojo', 
+  verde = 'Verde',
+  azul = 'Azul'
 }
 
-let colorFavorito : Color = Color.Azul
+let colorFavorito : Color = Color.rojo
 
 console.log(`Mi color favorito es ${colorFavorito}`)
 
 
-//Any
-let comodin : any ='Joker'
-comodin = {type: "Wildcard"}
+//Anny
+let comodin : any = 'Joker'
+comodin = {type: 'Wildcard'}
+
+//Object
+let someObject : object = {type: 'Wildcard'}
 
 
-//Object 
+/*
+  Funciones
+*/
 
-let someObject : object = {type: "Wildcard"}
+function adde(a: number, b: number) : number {
+  return a + b
+}
+
+const summs = adde(1,2)
+
+function createAdder(a: number) : (number) => number {
+  return function (b: number) {
+    return a + b
+  }
+}
+
+const addFour = createAdder(4)
+const forPlus6 = addFour(6)
+
+
+function FullName(firstName : string, lastName: string = 'brisenio') : string{
+  return `${firstName} ${lastName}`
+}
+
+const victor = FullName('Victor')
+
+// Interfaces ---> \
+enum Color2{
+  Rojo = 'Rojo',
+  Verde= 'Verde'
+}
+
+interface Rectangulo {
+  ancho: number,
+  alto: number,
+  color ? : Color2,
+}
+
+let rect: Rectangulo = {
+  ancho: 4,
+  alto: 6,
+  color: Color2.Verde
+}
+
+function area(r: Rectangulo){
+  return r.alto * r.ancho
+}
+
+const AreaRect = area(rect)
+
+rect.toString = function () {
+  return this.color ?  `Un rectangulo ${this.color}` : 'Un rectangulo'
+} 
+
+console.log(rect.toString())
