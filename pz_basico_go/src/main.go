@@ -16,6 +16,7 @@ func (myPc *pc) dublicateRam() {
 	myPc.ram = myPc.ram * 2
 }
 
+// Personalizando ouput de Structs con Stringers
 func (myPc pc) String() string {
 	return fmt.Sprintf("Tengo %d GB RAM, %d GB Disco, y una %s,", myPc.ram, myPc.disk, myPc.brand)
 }
