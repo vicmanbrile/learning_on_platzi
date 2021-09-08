@@ -1,6 +1,18 @@
 var cuadro = document.getElementById("area_de_dibujo");
 var papel = cuadro.getContext("2d");
 
+function selectDisplay(value){
+  const input_teclas = document.getElementById('input_teclas')
+  const input_mouse = document.getElementById('input_mouse')
+
+  if (value === "mouse"){
+    input_teclas.checked = false
+  } else if (value === "teclado"){
+    input_mouse.checked = false
+  }
+  console.log(value)
+}
+
 // Funcion para dibujar
 function dibujandoLinea(color, xinicial, yincial, xfinal, yfinal, lienzo){
     lienzo.beginPath();

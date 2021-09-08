@@ -6,6 +6,14 @@
   </head>
   <body>
     <p>Mueve las flechas del teclado para dibujar</p>
+
+    <form>
+      <label for="input_teclas">Teclado</label>
+      <input type="checkbox" id="input_teclas" onclick="selectDisplay('teclado')">
+      <label for="input_mouse">Mouse</label>
+      <input type="checkbox" id="input_mouse" onclick="selectDisplay('mouse')">
+    </form>
+    <p id="modoDibujo"></p>
     <canvas id="area_de_dibujo" width="300" height="300"></canvas>
 
     <script type="text/javascript" src="eventos.js"></script>
