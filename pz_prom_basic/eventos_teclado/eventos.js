@@ -1,17 +1,7 @@
-var teclas = {
-  UP: 38,
-  DOWN:40,
-  LEFT: 37,
-  RIGHT: 39
-};
-
 var cuadro = document.getElementById("area_de_dibujo");
 var papel = cuadro.getContext("2d");
-var x = 150;
-var y = 150;
 
-dibujandoLinea("red", x - 1 , y - 1, x + 1, y + 1, papel);
-
+// Funcion para dibujar
 function dibujandoLinea(color, xinicial, yincial, xfinal, yfinal, lienzo){
     lienzo.beginPath();
     lienzo.strokeStyle = color;
@@ -22,9 +12,15 @@ function dibujandoLinea(color, xinicial, yincial, xfinal, yfinal, lienzo){
     lienzo.closePath();
 }
 
-document.addEventListener("keyup", dibujarTeclado);
+// Numero de las teclas del teclado
+var teclas = {
+  UP: 38,
+  DOWN:40,
+  LEFT: 37,
+  RIGHT: 39
+};
 
-
+//Funcion para imprimir con el teclado
 function dibujarTeclado(evento){
   var colorcito = "red";
   var movimiento = 10;
@@ -48,10 +44,39 @@ function dibujarTeclado(evento){
   }
 }
 
-cuadro.addEventListener("mousemove", movimientoMouse)
-cuadro.addEventListener("mousedown", movimientoMouse)
+
+// Logica para dibujo de teclado
+var x = 150;
+var y = 150;
+
+dibujandoLinea("red", x - 1 , y - 1, x + 1, y + 1, papel); // Punto de inicio
+document.addEventListener("keyup", dibujarTeclado); // Listener para las teclados
 
 
-function movimientoMouse(evento) {
-  console.log(evento)
+// Logica para dibujo de mause
+
+function clickend(event) {
+  event.type === "mousedown" ? estadoClick = true : estadoClick = false
 }
+
+var estadoClick = false 
+
+cuadro.addEventListener("mousedown", clickend, false)
+cuadro.addEventListener("mouseup", clickend, false)
+
+function movimientoMouse(evento){
+  const values = {
+    x: evento.clientX - 10,
+    y: evento.clientY - 50
+  }
+
+  if (estadoClick) {
+    dibujandoLinea("#000", values.x, values.y, values.x + 1, values.y + 1, papel )
+  } else {
+  }
+}
+
+
+cuadro.addEventListener("mousemove", movimientoMouse) // Listener del movimiento del teclado
+
+
