@@ -3,19 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title>Dibujando con flechas</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <p>Mueve las flechas del teclado para dibujar</p>
-
-    <form>
-      <label for="input_teclas">Teclado</label>
-      <input type="checkbox" id="input_teclas" onclick="selectDisplay('teclado')">
-      <label for="input_mouse">Mouse</label>
-      <input type="checkbox" id="input_mouse" onclick="selectDisplay('mouse')">
-    </form>
-    <p id="modoDibujo"></p>
-    <canvas id="area_de_dibujo" width="300" height="300"></canvas>
-
+    <main>
+      <p id="indicacion">Dibuja con</p>
+      <p id="positionXY"></p>
+      <form>
+        <label for="input_teclas">Teclado</label>
+        <input type="checkbox" id="input_teclas" onclick="selectDisplay('teclado')">
+        <label for="input_mouse">Mouse</label>
+        <input type="checkbox" id="input_mouse" onclick="selectDisplay('mouse')">
+      </form>
+      <form>
+        <label for="selec_color"></label>
+        <input type="color" id="selec_color">
+      </form>
+      <p id="modoDibujo"></p>
+      <canvas id="area_de_dibujo" width="300" height="300"></canvas>
+    </main>
+    <script src="dibujado.js"></script>
     <script type="text/javascript" src="eventos.js"></script>
   </body>
 </html>

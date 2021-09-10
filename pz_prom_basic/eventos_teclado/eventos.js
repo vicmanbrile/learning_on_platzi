@@ -1,52 +1,81 @@
 var cuadro = document.getElementById("area_de_dibujo");
 var papel = cuadro.getContext("2d");
 
-// Funcion para dibujar
-function dibujandoLinea(color, xinicial, yincial, xfinal, yfinal, lienzo){
-  lienzo.beginPath();
-  lienzo.strokeStyle = color;
-  lienzo.lineWidth = 2;
-  lienzo.moveTo(xinicial, yincial);
-  lienzo.lineTo(xfinal, yfinal);
-  lienzo.stroke();
-  lienzo.closePath();
+var USER_CONFIG = {
+  color: () => {
+    return document.getElementById('selec_color').value
+  },
+  xinicial: -1,
+  yincial: -1,
+  xfinal: +1,
+  yfinal: +1,
+  lienzo: papel,
+
+  // movimiento: 
 }
 
-// Numero de las teclas del teclado
-var teclas = {
-  UP: 38,
-  DOWN:40,
-  LEFT: 37,
-  RIGHT: 39
-};
+
+
+// Logica para dibujo de teclado
+var x = 150;
+var y = 150;
 
 //Funcion para imprimir con el teclado
 function dibujarTeclado(evento){
-  var colorcito = "red";
+  // Numero de las teclas del teclado
+  const teclas = {
+    UP: 38,
+    DOWN:40,
+    LEFT: 37,
+    RIGHT: 39
+  };
   var movimiento = 10;
+
   switch (evento.keyCode) {
     case teclas.UP:
-      dibujandoLinea(colorcito, x, y, x, y - movimiento, papel);
+      dibujandoLinea({
+        ...USER_CONFIG,
+        xinicial: x,
+        xfinal: x, 
+        yincial: y, 
+        yfinal: y - movimiento, 
+      });
+
       y = y - movimiento;
     break;
     case teclas.DOWN:
-      dibujandoLinea(colorcito, x, y, x, y + movimiento, papel);
+      dibujandoLinea({
+        ...USER_CONFIG,
+        xinicial: x,
+        xfinal: x, 
+        yincial: y, 
+        yfinal: y + movimiento,
+      });
       y = y + movimiento;
     break;
     case teclas.LEFT:
-      dibujandoLinea(colorcito, x, y, x - movimiento, y, papel);
+      dibujandoLinea({
+        ...USER_CONFIG,
+        xinicial: x,
+        xfinal: x - movimiento, 
+        yincial: y, 
+        yfinal: y,
+      });
       x = x - movimiento;
     break;
     case teclas.RIGHT:
-      dibujandoLinea(colorcito, x, y, x + movimiento, y, papel);
+      dibujandoLinea({
+        ...USER_CONFIG,
+        xinicial: x,
+        xfinal: x + movimiento, 
+        yincial: y, 
+        yfinal: y,
+      });
       x = x + movimiento;
     break;
   }
 }
 
-// Logica para dibujo de teclado
-var x = 150;
-var y = 150;
 
 
 function clickend(event) {
@@ -57,13 +86,15 @@ var estadoClick = false
 
 function movimientoMouse(evento){
   const values = {
-    x: evento.clientX - 10,
-    y: evento.clientY - 50
+    x: evento.clientX,
+    y: evento.clientY
   }
   
   if (estadoClick) {
-    dibujandoLinea("#000", values.x, values.y, values.x + 1, values.y + 1, papel )
+    document.getElementById('positionXY').innerText = `X = ${values.x}, Y = ${values.y}`
+    //dibujandoLinea("red", values.x, values.y, values.x + 1, values.y + 1, papel )
   } else {
+    return
   }
 }
 
@@ -80,6 +111,7 @@ function selectDisplay(value){
     cuadro.addEventListener("mousedown", clickend, false) 
     cuadro.addEventListener("mouseup", clickend, false)
     
+    document.getElementById("indicacion").innerText = "Dibuja con mouse y click"
     input_teclas.checked = false
   } else if (value === "teclado"){
     // Desactivar Listeners
@@ -88,7 +120,9 @@ function selectDisplay(value){
     cuadro.removeEventListener("mouseup", clickend, false)
     // Activar Listeners
     document.addEventListener("keyup", dibujarTeclado); // Listener para las teclados
-    dibujandoLinea("red", x - 1 , y - 1, x + 1, y + 1, papel); // Punto de inicio
+    dibujandoLinea({...USER_CONFIG}); // Punto de inicio
+
+    document.getElementById("indicacion").innerText = "Dibuja con las flechas del teclado"
     input_mouse.checked = false
   }
 
