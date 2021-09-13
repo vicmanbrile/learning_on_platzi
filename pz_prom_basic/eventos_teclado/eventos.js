@@ -7,8 +7,8 @@ var USER_CONFIG = {
   },
   xinicial: 0,
   yincial: 0,
-  xfinal: +1,
-  yfinal: +1,
+  xfinal: 0,
+  yfinal: 0,
   lienzo: papel,
   isDrawing: false,
 }
@@ -123,8 +123,6 @@ function selectDisplay(value){
     cuadro.removeEventListener("mouseup", clickend, false)
     // Activar Listeners
     document.addEventListener("keyup", dibujarTeclado); // Listener para las teclados
-    dibujandoLinea({...USER_CONFIG}); // Punto de inicio
-
     document.getElementById("indicacion").innerText = "Dibuja con las flechas del teclado"
     input_mouse.checked = false
   }
