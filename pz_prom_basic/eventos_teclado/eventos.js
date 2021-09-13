@@ -5,13 +5,12 @@ var USER_CONFIG = {
   color: () => {
     return document.getElementById('selec_color').value
   },
-  xinicial: -1,
-  yincial: -1,
+  xinicial: 0,
+  yincial: 0,
   xfinal: +1,
   yfinal: +1,
   lienzo: papel,
-
-  // movimiento: 
+  isDrawing: false,
 }
 
 
@@ -79,22 +78,26 @@ function dibujarTeclado(evento){
 
 
 function clickend(event) {
-  event.type === "mousedown" ? estadoClick = true : estadoClick = false
+  if (event.type === "mousedown"){
+    USER_CONFIG.isDrawing = true
+    USER_CONFIG.xinicial = event.offsetX
+    USER_CONFIG.yincial = event.offsetY
+    console.log(`mosedown: x : ${event.offsetX} y: ${event.offsetY}`)
+  } else {
+    USER_CONFIG.isDrawing = false
+  }
 }
 
-var estadoClick = false 
-
-function movimientoMouse(evento){
-  const values = {
-    x: evento.clientX,
-    y: evento.clientY
-  }
-  
-  if (estadoClick) {
-    document.getElementById('positionXY').innerText = `X = ${values.x}, Y = ${values.y}`
-    //dibujandoLinea("red", values.x, values.y, values.x + 1, values.y + 1, papel )
-  } else {
-    return
+function movimientoMouse(event){  
+  if (USER_CONFIG.isDrawing) {
+    dibujandoLinea({
+      ...USER_CONFIG,
+      xfinal: event.offsetX,
+      yfinal: event.offsetY,
+    })
+    USER_CONFIG.xinicial = event.offsetX
+    USER_CONFIG.yincial = event.offsetY
+    console.log(`mousemove: x : ${event.offsetX} y: ${event.offsetY}`)
   }
 }
 
