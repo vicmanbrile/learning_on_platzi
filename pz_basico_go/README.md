@@ -6,7 +6,18 @@ Estos conocimientos vienen del "[Curso Básico de Programación en GO](https://p
 ## Language
 |Concepto|Ejemplo|
 |:--:|:---:|
-|  If |[ IF ](src/if.md)|
+| functions | [ functions ](examples/func.md)|
+| defer continue break | [ defer continue break ](examples/defer_continue_break.md)|
+|  If |[ If ](examples/if.md)|
+| cycles | [ cycles ](examples/ciclos.md)|
+| switch | [ switch ](examples/switch.md)|
+| class | [ class ](examples/classes.md)|
+| strucs and pointers | [ strucs and pointers ](examples/estructuras_punteros.md)|
+| array | [ array ](examples/array_slices.md)|
+| maps | [ maps ](examples/maps.md)|
+| packages | [ packages ](examples/packages/README.md)|
+
+
 ---
 
 
