@@ -82,7 +82,6 @@ function clickend(event) {
     USER_CONFIG.isDrawing = true
     USER_CONFIG.xinicial = event.offsetX
     USER_CONFIG.yincial = event.offsetY
-    console.log(`mosedown: x : ${event.offsetX} y: ${event.offsetY}`)
   } else {
     USER_CONFIG.isDrawing = false
   }
@@ -97,7 +96,6 @@ function movimientoMouse(event){
     })
     USER_CONFIG.xinicial = event.offsetX
     USER_CONFIG.yincial = event.offsetY
-    console.log(`mousemove: x : ${event.offsetX} y: ${event.offsetY}`)
   }
 }
 
